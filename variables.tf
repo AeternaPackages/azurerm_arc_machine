@@ -22,6 +22,8 @@ Nested arc_machine_extensions (azurerm_arc_machine_extension):
         - automatic_upgrade_enabled
         - force_update_tag
         - protected_settings
+        - protected_settings_key_vault_id (alternative to protected_settings - read from Key Vault instead)
+        - protected_settings_key_vault_secret_name (alternative to protected_settings - read from Key Vault instead)
         - settings
         - tags
         - type_handler_version
@@ -40,16 +42,18 @@ EOT
       configuration_id = string
     })))
     arc_machine_extensions = optional(map(object({
-      location                  = string
-      name                      = string
-      publisher                 = string
-      type                      = string
-      automatic_upgrade_enabled = optional(bool) # Default: true
-      force_update_tag          = optional(string)
-      protected_settings        = optional(string)
-      settings                  = optional(string)
-      tags                      = optional(map(string))
-      type_handler_version      = optional(string)
+      location                                 = string
+      name                                     = string
+      publisher                                = string
+      type                                     = string
+      automatic_upgrade_enabled                = optional(bool) # Default: true
+      force_update_tag                         = optional(string)
+      protected_settings                       = optional(string)
+      protected_settings_key_vault_id          = optional(string)
+      protected_settings_key_vault_secret_name = optional(string)
+      settings                                 = optional(string)
+      tags                                     = optional(map(string))
+      type_handler_version                     = optional(string)
     })))
   }))
 
