@@ -5,7 +5,7 @@ locals {
     for k1, v1 in var.arc_machines : {
       for k2, v2 in coalesce(v1.arc_machine_automanage_configuration_assignments, {}) :
       "${k1}/${k2}" => merge(v2, {
-        arc_machine_id = module.arc_machines.arc_machines["${k1}"].id
+        arc_machine_id = module.arc_machines.arc_machines_id["${k1}"]
       })
     }
   ]...)
@@ -14,7 +14,7 @@ locals {
     for k1, v1 in var.arc_machines : {
       for k2, v2 in coalesce(v1.arc_machine_extensions, {}) :
       "${k1}/${k2}" => merge(v2, {
-        arc_machine_id = module.arc_machines.arc_machines["${k1}"].id
+        arc_machine_id = module.arc_machines.arc_machines_id["${k1}"]
       })
     }
   ]...)
