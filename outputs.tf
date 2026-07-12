@@ -1,4 +1,9 @@
 # --- azurerm_arc_machine ---
+output "arc_machines_id" {
+  description = "Map of id values across all arc_machines, keyed the same as var.arc_machines"
+  value       = module.arc_machines.arc_machines_id
+}
+
 output "arc_machines_identity" {
   description = "Map of identity values across all arc_machines, keyed the same as var.arc_machines"
   value       = module.arc_machines.arc_machines_identity
@@ -30,6 +35,11 @@ output "arc_machines_tags" {
 }
 
 # --- azurerm_arc_machine_automanage_configuration_assignment ---
+output "arc_machine_automanage_configuration_assignments_id" {
+  description = "Map of id values across all arc_machine_automanage_configuration_assignments, keyed the same as var.arc_machine_automanage_configuration_assignments"
+  value       = module.arc_machine_automanage_configuration_assignments.arc_machine_automanage_configuration_assignments_id
+}
+
 output "arc_machine_automanage_configuration_assignments_arc_machine_id" {
   description = "Map of arc_machine_id values across all arc_machine_automanage_configuration_assignments, keyed the same as var.arc_machine_automanage_configuration_assignments"
   value       = module.arc_machine_automanage_configuration_assignments.arc_machine_automanage_configuration_assignments_arc_machine_id
@@ -41,6 +51,11 @@ output "arc_machine_automanage_configuration_assignments_configuration_id" {
 }
 
 # --- azurerm_arc_machine_extension ---
+output "arc_machine_extensions_id" {
+  description = "Map of id values across all arc_machine_extensions, keyed the same as var.arc_machine_extensions"
+  value       = module.arc_machine_extensions.arc_machine_extensions_id
+}
+
 output "arc_machine_extensions_arc_machine_id" {
   description = "Map of arc_machine_id values across all arc_machine_extensions, keyed the same as var.arc_machine_extensions"
   value       = module.arc_machine_extensions.arc_machine_extensions_arc_machine_id
