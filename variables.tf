@@ -46,7 +46,7 @@ EOT
       name                                     = string
       publisher                                = string
       type                                     = string
-      automatic_upgrade_enabled                = optional(bool) # Default: true
+      automatic_upgrade_enabled                = optional(bool)
       force_update_tag                         = optional(string)
       protected_settings                       = optional(string)
       protected_settings_key_vault_id          = optional(string)
